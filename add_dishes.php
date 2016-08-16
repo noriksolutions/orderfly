@@ -56,7 +56,7 @@ else {
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      
+
       <li class="active">Add Dishes</li>
     </ol>
   </section>
@@ -71,23 +71,23 @@ else {
           </div>
           <!-- /.box-header -->
           <div class="box-body">
-            <form role="form">
+            <form role="form" method="post" action="dishes_code.php" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Dish name</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Dish Name">
+                  <input type="text" class="form-control" name="dishname" id="exampleInputEmail1" placeholder="Dish Name" required="yes">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Dish Price</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Price">
+                  <input type="number" class="form-control" name="price" id="exampleInputEmail1" placeholder="Price" required="yes">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Description</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Description">
+                  <input type="text" class="form-control" name="description" id="exampleInputEmail1" placeholder="Description" required="yes">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">Image</label>
-                  <input type="file" id="exampleInputFile">
+                  <input type="file" name="image1" id="exampleInputFile">
 
                                  </div>
 
@@ -95,7 +95,7 @@ else {
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
@@ -116,6 +116,7 @@ else {
                 <th>Dishes Names</th>
                 <th>Price</th>
                 <th>Description</th>
+                <th>Image</th>
               </tr>
               </thead>
               <tbody>
@@ -125,67 +126,9 @@ else {
                 <td>Firefox 3.0</td>
                 <td>Win 2k+ / OSX.3+</td>
                 <td>1.9</td>
-
+                <td>Yes</td>
               </tr>
 
-              <tr>
-                <td>Webkit</td>
-                <td>S60</td>
-                <td>S60</td>
-                <td>413</td>
-
-              </tr>
-
-              <tr>
-                <td>Misc</td>
-                <td>NetFront 3.1</td>
-                <td>Embedded devices</td>
-                <td>-</td>
-
-              </tr>
-              <tr>
-                <td>Misc</td>
-                <td>NetFront 3.4</td>
-                <td>Embedded devices</td>
-                <td>-</td>
-
-              </tr>
-              <tr>
-                <td>Misc</td>
-                <td>Dillo 0.8</td>
-                <td>Embedded devices</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Misc</td>
-                <td>Links</td>
-                <td>Text only</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Misc</td>
-                <td>Lynx</td>
-                <td>Text only</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Misc</td>
-                <td>IE Mobile</td>
-                <td>Windows Mobile 6</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Misc</td>
-                <td>PSP browser</td>
-                <td>PSP</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Other browsers</td>
-                <td>All others</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
               </tbody>
               <tfoot>
               <tr>
