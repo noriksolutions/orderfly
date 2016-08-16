@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
 //  $image2=$_POST['image1'];
 
   //$image_func=image_upload($conn,$image);
-  $query =  mysqli_query($conn,"insert into  dishes (details_id,item_name,cost,description,status)values('$id','$dishname','$price','$desc','0')");
+  $query =  mysqli_query($conn,"insert into  dishes (user_id,item_name,cost,description,status)values('$id','$dishname','$price','$desc','0')");
   var_dump($query);
   if($query){
     header("location:add_dishes.php");

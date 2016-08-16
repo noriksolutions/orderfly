@@ -121,13 +121,7 @@ else {
               </thead>
               <tbody>
 
-              <tr>
-                <td>Gecko</td>
-                <td>Firefox 3.0</td>
-                <td>Win 2k+ / OSX.3+</td>
-                <td>1.9</td>
-                <td>Yes</td>
-              </tr>
+          <?php include "functions.php"; ?>
 
               </tbody>
               <tfoot>
@@ -135,7 +129,8 @@ else {
                 <th>sno</tsh>
                 <th>Dishes Names</th>
                 <th>Price</th>
-                <th>Description</
+                <th>Description</th>
+                <th>image</th>
               </tr>
               </tfoot>
             </table>

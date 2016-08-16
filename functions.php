@@ -17,19 +17,25 @@ $user2=$_SESSION['username'];
 //   }
 // }
 
-// function show_dishes($conn,$username)
-// {
-//   $userid=user_id($conn,$user2);
-//   $query=mysqli_query($conn,"select id.user,username.user,id.dishes,dishname.dishes,price.dishes,description.dishes,status.dishes from user,dishes where user_id.dishes='$userid' and status.dishes = 0 ");
-//   while($row=mysqli_fetch_array($query))
-//   {
-//     $dishname=$res['dishname'];
-//     $price=$res['price'];
-//     $des=$res['description'];
-//     $image1=$res['url'];
-//     echo "<tr><td>{}</td><td>{$dishname}</td><td>{$price}</td><td>{$des}</td><td>{$image1}<td></tr>";
-//   }
-// }
+
+  $query=mysqli_query($conn,"select id , username from user where username='$user2' LIMIT 1");
+  //var_dump($query);
+  while($res=mysqli_fetch_array($query))
+  {
+    $id=$res['id'];
+}
+//echo $id;
+  $query=mysqli_query($conn,"select user.id,dishes.user_id,dishes.item_name,dishes.cost,dishes.description,dishes.url,dishes.status from user,dishes where dishes.user_id=user.id and dishes.status =0");
+  while($res=mysqli_fetch_array($query))
+  {
+    $dishname=$res['item_name'];
+    $price=$res['cost'];
+    $des=$res['description'];
+    $image1=$res['url'];
+    echo "<tr><td>{}</td><td>{$dishname}</td><td>{$price}</td><td>{$des}</td><td>{$image1}<td></tr>";
+  }
+
+
 
 
 
