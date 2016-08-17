@@ -13,17 +13,26 @@ if(isset($_POST['submit'])){
   }else if($res['status'] == 1){
     header('location:dashboard.php');
   }else {
-    $_SESSION['errMsg']="Invalid Username or Password";
+    $Message = urlencode("Invalid Username or Password");
+header("Location:index.php?Message=".$Message);
+die;
+    //$_SESSION['errMsg']="Invalid Username or Password";
     }
   }
 }else {
-  $_SESSION['errMsg']="Invalid Username or Password";
-  header('location:index.php');
+  $Message = urlencode("Invalid Username or Password ");
+header("Location:index.php?Message=".$Message);
+die;
+  // $_SESSION['errMsg']="Invalid Username or Password";
+  // header('location:index.php');
   }
 
 }
 else {
-  $_SESSION['errMsg']="Invalid Username or Password";
+  $Message = urlencode("Invalid Username or Password ");
+header("Location:index.php?Message=".$Message);
+die;
+  //$_SESSION['errMsg']="Invalid Username or Password";
   //header('location:index.php');
   // echo "<script type='text/javascript'>alert('failed');</script>";
 }

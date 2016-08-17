@@ -8,6 +8,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -16,6 +17,7 @@
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,27 +37,27 @@
 
     <form action="register.php" method="post">
       <div class="form-group has-feedback">
-        <input type="text" name="fullname" class="form-control" placeholder="Full name">
+        <input type="text" name="fullname" class="form-control" placeholder="Full name" required="yes">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" name="email" class="form-control" placeholder="Email">
+        <input type="email" name="email" class="form-control" placeholder="Email" required="yes">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" id="password" placeholder="Password"   required="yes">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+      <!-- <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="confrim_password" id="confrim_password" placeholder="Retype password"   required="yes">
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span><span id="message"></span>
+      </div> -->
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Retype password">
+        <textarea class="form-control" name="address" placeholder="Address" required="yes"></textarea>
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <textarea class="form-control" name="address" placeholder="Address"></textarea>
-        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="number" name="phone" class="form-control" placeholder="phonenumber">
+        <input type="number" name="phone" class="form-control" placeholder="phonenumber" maxlength="10" required="yes">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
@@ -68,7 +70,7 @@
         </div> -->
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" name="submit" class="btn btn-primary btn-block btn-flat">Register</button><a href="index.php">Login</a><br>
+          <button type="submit" name="submit" id="submit" class="btn btn-primary btn-block btn-flat">Register</button><a href="index.php">Login</a><br>
         </div>
         <!-- /.col -->
       </div>

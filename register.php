@@ -13,7 +13,8 @@ if(isset($_POST['submit']))
   {
     //echo 'sucess';
     echo "<script type='text/javascript'>alert('registration successful');</script>";
-  }
+    echo "<a href='index.php'>Login Page</a>";
+    }
   else {
     echo "<script type='text/javascript'>alert('registration failed');</script>";
   }

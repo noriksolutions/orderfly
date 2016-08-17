@@ -25,10 +25,9 @@
   <![endif]-->
 </head>
 <body class="hold-transition login-page">
-  <div id="errMsg">
-  <?php if(!empty($_SESSION['errMsg'])){echo $_SESSION['errMsg']; } ?>
-</div>
-<?php unset($_SESSION['errMsg']); ?>
+<?php if(isset($_GET['Message'])){
+    echo $_GET['Message'];
+}?>
 <div class="login-box">
   <div class="login-logo">
     <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
@@ -40,11 +39,11 @@
 
     <form action="login.php" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" name="email" placeholder="Email">
+        <input type="email" class="form-control" name="email" placeholder="Email" required="yes">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password" required="yes">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
