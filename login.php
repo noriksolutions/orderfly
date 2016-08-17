@@ -4,7 +4,7 @@ session_start();
 if(isset($_POST['submit'])){
  $user1=$_POST['email'];
  $passwd=$_POST['password'];
- $query=mysqli_query($conn,"select username,password,status from user where username='$user1' AND password='$passwd'");
+ $query=mysqli_query($conn,"select username,password,status from user where emailid='$user1' AND password='$passwd'");
  if(mysqli_num_rows($query) > 0){
  while($res=mysqli_fetch_array($query)){
  $_SESSION['username']=$user1;
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
   }
 }else {
   $_SESSION['errMsg']="Invalid Username or Password";
-  header('location:login.html');
+  header('location:index.php');
   }
 
 }

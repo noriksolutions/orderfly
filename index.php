@@ -25,6 +25,10 @@
   <![endif]-->
 </head>
 <body class="hold-transition login-page">
+  <div id="errMsg">
+  <?php if(!empty($_SESSION['errMsg'])){echo $_SESSION['errMsg']; } ?>
+</div>
+<?php unset($_SESSION['errMsg']); ?>
 <div class="login-box">
   <div class="login-logo">
     <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
@@ -47,7 +51,14 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <a href="#">I forgot my password</a><br>
+              <a href="forgot_password.html">I forgot my password</a><br>
+            </label>
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <a href="register.html">Register</a><br>
             </label>
           </div>
         </div>

@@ -31,7 +31,7 @@ else {
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       <?php
-      $query=mysqli_query($conn,"select username,status from user where username='$user2'")or die(mysqli_error());
+      $query=mysqli_query($conn,"select emailid,status from user where emailid='$user2'")or die(mysqli_error());
       while($row=mysqli_fetch_array($query))
       {
         if($row['status'] == 0){
