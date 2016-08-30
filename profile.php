@@ -31,7 +31,7 @@ else {
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       <?php
-      $query=mysqli_query($conn,"select emailid,status from user where emailid='$user2'")or die(mysqli_error());
+      $query=mysqli_query($conn,"select emailid,status from restaurants where emailid='$user2'")or die(mysqli_error());
       while($row=mysqli_fetch_array($query))
       {
         if($row['status'] == 0){
@@ -69,7 +69,7 @@ else {
           <div class="box-body box-profile">
             <img class="profile-user-img img-responsive img-circle" src="dist/img/user2-160x160.jpg" alt="User profile picture">
 <?php
-$query2=mysqli_query($conn,"select * from user where emailid='$user2'");
+$query2=mysqli_query($conn,"select * from restaurants where emailid='$user2'");
 while($row=mysqli_fetch_array($query2))
 {
 ?>
@@ -77,17 +77,14 @@ while($row=mysqli_fetch_array($query2))
 
             <h3 class="profile-username text-center"><?php $rest= $row['rest_name']; echo $rest; ?></h3>
 
-            <p class="text-muted text-center"><?php $phn=$row['phone']; echo $phn; ?></p>
+            <p class="text-muted text-center"><?php $phn=$row['phoneno']; echo $phn; ?></p>
 
             <ul class="list-group list-group-unbordered">
-              <li class="list-group-item">
-                <b>Name</b> <a class="pull-right"><?php $user=$row['username']; echo $user; ?></a>
-              </li>
               <li class="list-group-item">
                 <b>Emailid</b> <a class="pull-right"><?php $email=$row['emailid']; echo $email;?></a>
               </li>
               <li class="list-group-item">
-                <b>Phone</b> <a class="pull-right"><?php $phn=$row['phone']; echo $phn; ?></a>
+                <b>Phone</b> <a class="pull-right"><?php $phn=$row['phoneno']; echo $phn; ?></a>
               </li>
               <li class="list-group-item">
                 <b>address</b> <a class="pull-right"><?php $add=$row['address']; echo $add; ?></a>

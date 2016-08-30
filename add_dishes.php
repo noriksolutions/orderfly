@@ -40,7 +40,7 @@ else {
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       <?php
-      $query=mysqli_query($conn,"select emailid,status from user where emailid='$user2'")or die(mysqli_error());
+      $query=mysqli_query($conn,"select emailid,status from restaurants where emailid='$user2'")or die(mysqli_error());
       while($row=mysqli_fetch_array($query))
       {
         if($row['status'] == 0){
