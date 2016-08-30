@@ -1,5 +1,6 @@
 <?php
 require "connection.php";
+include "phpqrcode/qrlib.php";
 date_default_timezone_set('Asia/Kolkata');$date2=date('Y-m-d');
 session_start();
 $user2=$_SESSION['username'];
@@ -19,14 +20,18 @@ $query=mysqli_query($conn,"select id , emailid from user where emailid='$user2' 
     $price=$res['cost'];
     $des=$res['description'];
     $image1=$res['url'];
+    //QRcode::png($dishname);
+    //echo "<img src='$qrcode'/>";
     if($image1 == NULL){
-      echo "<tr><td>$count</td><td>{$dishname}</td><td>{$price}</td><td>{$des}</td><td>No Image<td></tr>";
+      echo "<tr><td>$count</td><td>{$dishname}</td><td>{$price}</td><td>{$des}</td><td>No Image</td><td> ";
+      echo "<a href='qrcode.php?name={$dishname},price={$price}'>click here</a></td></tr>";
+
     }
       else {
-        echo "<tr><td>$count</td><td>{$dishname}</td><td>{$price}</td><td>{$des}</td><td>{$image1}<td></tr>";
+        echo "<tr><td>$count</td><td>{$dishname}</td><td>{$price}</td><td>{$des}</td><td>{$image1}</td><td>";
+        echo "<a href='qrcode.php?name={$dishname},price={$price}'>click here</a></td></tr>";
       }
   }
-
 
 
 
