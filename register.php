@@ -1,23 +1,26 @@
 <?php
 include "connection.php";
+// $mess=$_GET['message'];
+// echo 'Registration failed';
 if(isset($_POST['submit']))
 {
-  $username=$_POST['fullname'];
+  //$username=$_POST['fullname'];
   $email=$_POST['email'];
   $pass=$_POST['password'];
+  $hash=md5($pass);
   $address=$_POST['address'];
   $phone=$_POST['phone'];
   $rest=$_POST['rest_name'];
-  $query=mysqli_query($conn,"insert into user(username,password,status,block,emailid,phone,address,rest_name) values ('$username','$pass',0,0,'$email','$phone','$address','$rest')");
+  $query=mysqli_query($conn,"insert into restaurants(rest_name,password,status,emailid,phoneno,address) values ('$rest','$hash',0,'$email','$phone','$address')");
   //  var_dump($query);
   if($query)
   {
     //echo 'sucess';
-    echo "<script type='text/javascript'>alert('registration successful');</script>";
-    echo "<a href='index.php'>Login Page</a>";
+    header('location:index.php');
     }
   else {
-    echo "<script type='text/javascript'>alert('registration failed');</script>";
+    $message = urlencode("Registration failed");
+header("Location:index.php?message=".$message);
   }
 }
 

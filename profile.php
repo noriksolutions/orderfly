@@ -75,25 +75,30 @@ while($row=mysqli_fetch_array($query2))
 ?>
 
 
-            <h3 class="profile-username text-center"><?php $rest= $row['rest_name']; echo $rest; ?></h3>
+            <h3 class="profile-username text-center"><?php $rest= $row['rest_name']; echo $rest; ?> <a href="edit_profile.php?id=1"><i class="fa fa-fw fa-edit"></i></a></h3>
 
-            <p class="text-muted text-center"><?php $phn=$row['phoneno']; echo $phn; ?></p>
+
+            <p class="text-muted text-center"><?php $phn=$row['phoneno']; echo $phn; ?> <a href="edit_profile.php?id=2"><i class="fa fa-fw fa-edit"></i></a></p>
+
 
             <ul class="list-group list-group-unbordered">
               <li class="list-group-item">
                 <b>Emailid</b> <a class="pull-right"><?php $email=$row['emailid']; echo $email;?></a>
+
               </li>
               <li class="list-group-item">
                 <b>Phone</b> <a class="pull-right"><?php $phn=$row['phoneno']; echo $phn; ?></a>
+
               </li>
               <li class="list-group-item">
-                <b>address</b> <a class="pull-right"><?php $add=$row['address']; echo $add; ?></a>
+                <b>address</b> <a class="pull-right"><?php $add=$row['address']; echo $add; ?><a href="edit_profile.php?id=5"><i class="fa fa-fw fa-edit"></i></a></a>
+
               </li>
             </ul>
 
 
 
-            <a href="#" class="btn btn-primary btn-block"><b>Edit</b></a>
+            <!-- <a href="#" class="btn btn-primary btn-block"><b>Edit</b></a> -->
           </div>
           <!-- /.box-body -->
         </div>

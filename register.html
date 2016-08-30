@@ -59,16 +59,16 @@ return false;
 
     <form action="register.php" name="form2" method="post">
       <div class="form-group has-feedback">
-        <input type="text" name="fullname" class="form-control" placeholder="Full name"  aria-describedby="name-format" required aria-required=”true” pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+"  title="firstname lastname" id="fullname" >
+        <!-- <input type="text" name="fullname" class="form-control" placeholder="Full name"  aria-describedby="name-format" required aria-required=”true” pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+"  title="firstname lastname" id="fullname" > -->
         <!-- <span class="glyphicon glyphicon-user form-control-feedback"></span> -->
-         <span id="fullname" class="help">Format: firstname lastname</span>
-      </div>
+         <!-- <span id="fullname" class="help">Format: firstname lastname</span> -->
+      <!-- </div> -->
       <div class="form-group has-feedback">
-        <input type="email" name="email" class="form-control" placeholder="Email" required="yes">
+        <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="yes" >
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" name="rest_name" class="form-control" placeholder="Restaruant name" required="yes">
+        <input type="text" name="rest_name" id="rest_name" class="form-control" placeholder="Restaruant name" required="yes">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -84,7 +84,7 @@ return false;
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="number" name="phone" id="phone" class="form-control" placeholder="phonenumber" aria-describedby="phone-format" required aria-required=”true” pattern="\d{10}" maxlength="10">
+        <input type="number" name="phone" id="phone" class="form-control"  placeholder="phonenumber" aria-describedby="phone-format" required aria-required=”true” pattern="\d{10}" maxlength="10">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
@@ -97,26 +97,29 @@ return false;
         </div> -->
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" name="submit" id="submit"  class="btn btn-primary btn-block btn-flat">Register</button><a href="index.php">Login</a><br>
+          <button type="submit" name="submit" id="submit" onclick="validate_details()" class="btn btn-primary btn-block btn-flat">Register</button><a href="index.php">Login</a><br>
         </div>
         <!-- /.col -->
       </div>
     </form>
+    <script>
+    function validate_details(){
+      var email_pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var name_pattern = /^[a-zA-Z ]*$/;
+      var phone_pattern = /^[789]{1}[0-9]{9}$/;
+      if(document.getElementById('email').value == '' || document.getElementById('rest_name').value == '' || document.getElementById('phone').value == '') {
+         return alert('please fill all the details');
+
+      } else if(!email_pattern.test(document.getElementById('email').value) || !name_pattern.test(document.getElementById('rest_name').value) || !phone_pattern.test(document.getElementById('phone').value)) {
+         return alert('please enter valid details');
+
+      }
+    }
+    </script
 
 
-    <!-- <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-        Facebook</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
-        Google+</a>
-    </div>
 
-    <a href="login.html" class="text-center">I already have a membership</a>
-  </div> -->
-  <!-- /.form-box -->
-</div>
-<!-- /.register-box -->
+
 
 <!-- jQuery 2.2.0 -->
 <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>

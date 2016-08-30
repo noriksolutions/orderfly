@@ -25,7 +25,12 @@
   <![endif]-->
 </head>
 <body class="hold-transition login-page">
-<?php if(isset($_GET['Message'])){
+
+<?php
+if(isset($_GET['message'])){
+    echo $_GET['message'];
+}
+if(isset($_GET['Message'])){
     echo $_GET['Message'];
 }?>
 <div class="login-box">

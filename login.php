@@ -4,7 +4,8 @@ session_start();
 if(isset($_POST['submit'])){
  $user1=$_POST['email'];
  $passwd=$_POST['password'];
- $query=mysqli_query($conn,"select rest_name,password,status from restaurants where emailid='$user1' AND password='$passwd'");
+ $hash=md5($passwd);
+ $query=mysqli_query($conn,"select rest_name,password,status from restaurants where emailid='$user1' AND password='$hash'");
  if(mysqli_num_rows($query) > 0){
  while($res=mysqli_fetch_array($query)){
  $_SESSION['username']=$user1;
