@@ -1,3 +1,12 @@
+<script type="text/javascript">
+function validate(evt){
+     evt.value = evt.value.replace(/[^0-9]/g,"");
+}
+
+</script>
+
+
+
 <?php include "connection.php";
 date_default_timezone_set('Asia/Kolkata');$date2=date('Y-m-d');
 session_start();
@@ -31,7 +40,7 @@ else {
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       <?php
-      $query=mysqli_query($conn,"select username,status from user where username='$user2'")or die(mysqli_error());
+      $query=mysqli_query($conn,"select emailid,status from user where emailid='$user2'")or die(mysqli_error());
       while($row=mysqli_fetch_array($query))
       {
         if($row['status'] == 0){
@@ -79,11 +88,11 @@ else {
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Dish Price</label>
-                  <input type="number" class="form-control" name="price" id="exampleInputEmail1" placeholder="Price" required="yes">
+                  <input type="number" class="form-control" onkeypress="validate(event)" name="price" id="exampleInputEmail1" placeholder="Price" required="yes">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Description</label>
-                  <input type="text" class="form-control" name="description" id="exampleInputEmail1" placeholder="Description" required="yes">
+                  <textarea name="description" style="width: 1599px; height: 196px;" id="exampleInputEmail1" placeholder="Description" required="yes"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">Image</label>

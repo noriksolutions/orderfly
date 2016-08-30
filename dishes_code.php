@@ -4,7 +4,7 @@ include "functions.php";
 $user2=$_SESSION['username'];
 session_start();
 
-  $query=mysqli_query($conn,"select id , username from user where username='$user2' LIMIT 1");
+  $query=mysqli_query($conn,"select id , emailid from user where emailid='$user2' LIMIT 1");
   //var_dump($query);
   while($res=mysqli_fetch_array($query))
   {
