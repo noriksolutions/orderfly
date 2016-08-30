@@ -4,14 +4,14 @@ include "phpqrcode/qrlib.php";
 date_default_timezone_set('Asia/Kolkata');$date2=date('Y-m-d');
 session_start();
 $user2=$_SESSION['username'];
-$query=mysqli_query($conn,"select id , emailid from user where emailid='$user2' LIMIT 1");
+$query=mysqli_query($conn,"select id , emailid from restaurants where emailid='$user2' LIMIT 1");
   //var_dump($query);
   while($res=mysqli_fetch_array($query))
   {
     $id=$res['id'];
 }
 //echo $id;
-  $query=mysqli_query($conn,"select user.id,dishes.user_id,dishes.item_name,dishes.cost,dishes.description,dishes.url,dishes.status from user,dishes where dishes.user_id=$id and user.id = $id and dishes.status =0");
+  $query=mysqli_query($conn,"select restaurants.id,item.rest_id,item.item_name,item.cost,item.description,item.url,item.status from restaurants,item where item.rest_id=$id and restaurants.id = $id and item.status =0");
   $count=0;
   while($res=mysqli_fetch_array($query))
   {

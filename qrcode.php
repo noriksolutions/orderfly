@@ -31,7 +31,7 @@ else {
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       <?php
-      $query=mysqli_query($conn,"select emailid,status from user where emailid='$user2'")or die(mysqli_error());
+      $query=mysqli_query($conn,"select emailid,status from restaurants where emailid='$user2'")or die(mysqli_error());
       while($row=mysqli_fetch_array($query))
       {
         if($row['status'] == 0){
@@ -69,7 +69,7 @@ else {
           <div class="box-body box-profile">
             <h1> QRCODE </h1>
             <?php
-            $query2=mysqli_query($conn,"select * from user where emailid='$user2'");
+            $query2=mysqli_query($conn,"select * from restaurants where emailid='$user2'");
             function printQRCode($url, $size = 200) {
               return '<img src="http://chart.apis.google.com/chart?chs=' . $size . 'x' . $size . '&cht=qr&chl=' . urlencode($url) . '" />';
             }
@@ -78,7 +78,7 @@ else {
 
           //  $data=$row['rest_name'].$row['phone'].$row['address'];
             //echo "helloworld";
-            $rest=$row['rest_name']; $phn=$row['phone'];  $user=$row['username']; $email=$row['emailid']; $add=$row['address'];
+            $rest=$row['rest_name']; $phn=$row['phoneno'];   $email=$row['emailid']; $add=$row['address'];
             $data= $rest."\n".$phn."\n".$email."\n".$add;
             //echo $data;
             echo printQRCode($data); }
