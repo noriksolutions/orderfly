@@ -31,7 +31,8 @@
 <div class="login-box">
   <div class="login-logo">
     <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
-  Restaurant App
+    <img src="img/logo.png" alt="order fly" height="100px" width="100px"/>
+  OrderFly App
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

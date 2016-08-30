@@ -43,11 +43,11 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="#" class="logo">
+    <a href="profile.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>R</b>.S</span>
+      <span class="logo-mini"><b>O</b>.F</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Restaurant</b>App</span>
+      <span class="logo-lg"><b>OrderFly</b>App</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -87,7 +87,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="profile.html" class="btn btn-default btn-flat">Profile</a>
+                  <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>

@@ -7,7 +7,8 @@ if(isset($_POST['submit']))
   $pass=$_POST['password'];
   $address=$_POST['address'];
   $phone=$_POST['phone'];
-  $query=mysqli_query($conn,"insert into user(username,password,status,block,emailid,phone,address) values ('$username','$pass',0,0,'$email','$phone','$address')");
+  $rest=$_POST['rest_name'];
+  $query=mysqli_query($conn,"insert into user(username,password,status,block,emailid,phone,address,rest_name) values ('$username','$pass',0,0,'$email','$phone','$address','$rest')");
   //  var_dump($query);
   if($query)
   {

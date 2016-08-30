@@ -9,9 +9,9 @@ if(isset($_POST['submit'])){
  while($res=mysqli_fetch_array($query)){
  $_SESSION['username']=$user1;
    if($res['status'] == 0){
-     header('location:dashboard.php');
+     header('location:profile.php');
   }else if($res['status'] == 1){
-    header('location:dashboard.php');
+    header('location:profile.php');
   }else {
     $Message = urlencode("Invalid Username or Password");
 header("Location:index.php?Message=".$Message);

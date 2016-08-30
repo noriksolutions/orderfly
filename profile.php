@@ -51,35 +51,101 @@ else {
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Dashboard
-      <!-- <small>Version 2.0</small> -->
+      User Profile
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Dashboard</li>
+
+      <li class="active">User profile</li>
     </ol>
   </section>
-<section class="content">
-  <!-- Info boxes -->
-  <div class="row">
+  <section class="content">
+
+    <div class="row">
+      <div class="col-md-3">
+
+        <!-- Profile Image -->
+        <div class="box box-primary">
+          <div class="box-body box-profile">
+            <img class="profile-user-img img-responsive img-circle" src="dist/img/user2-160x160.jpg" alt="User profile picture">
+<?php
+$query2=mysqli_query($conn,"select * from user where emailid='$user2'");
+while($row=mysqli_fetch_array($query2))
+{
+?>
+
+
+            <h3 class="profile-username text-center"><?php $rest= $row['rest_name']; echo $rest; ?></h3>
+
+            <p class="text-muted text-center"><?php $phn=$row['phone']; echo $phn; ?></p>
+
+            <ul class="list-group list-group-unbordered">
+              <li class="list-group-item">
+                <b>Name</b> <a class="pull-right"><?php $user=$row['username']; echo $user; ?></a>
+              </li>
+              <li class="list-group-item">
+                <b>Emailid</b> <a class="pull-right"><?php $email=$row['emailid']; echo $email;?></a>
+              </li>
+              <li class="list-group-item">
+                <b>Phone</b> <a class="pull-right"><?php $phn=$row['phone']; echo $phn; ?></a>
+              </li>
+              <li class="list-group-item">
+                <b>address</b> <a class="pull-right"><?php $add=$row['address']; echo $add; ?></a>
+              </li>
+            </ul>
 
 
 
-
-
-
-
-
-
-
-
+            <a href="#" class="btn btn-primary btn-block"><b>Edit</b></a>
+          </div>
+          <!-- /.box-body -->
+        </div>
       </div>
+
+
+
+      <div class="col-md-3">
+
+        <!-- Profile Image -->
+        <div class="box box-primary">
+          <div class="box-body box-profile">
+            <h1> QRCODE </h1>
+            <?php
+            function printQRCode($url, $size = 200) {
+              return '<img src="http://chart.apis.google.com/chart?chs=' . $size . 'x' . $size . '&cht=qr&chl=' . urlencode($url) . '" />';
+            }
+          //  $data=$row['rest_name'].$row['phone'].$row['address'];
+            //echo "helloworld";
+            $data= $rest."\n".$phn."\n".$email."\n".$add;
+            //echo $data;
+            echo printQRCode($data);
+            ?>
+            <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+<?php } ?>
+
+
+
+  <!-- /.content -->
+</div>
+
   <!-- /.row -->
 </section>
+
+
+
+
+
 <div class="control-sidebar-bg"></div>
 
 </div>
 <!-- ./wrapper -->
+
+
+
 
 <!-- jQuery 2.2.0 -->
 <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>

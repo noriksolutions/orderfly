@@ -126,7 +126,6 @@ else {
                 <th>Price</th>
                 <th>Description</th>
                 <th>Image</th>
-                <th>QR Code</th>
               </tr>
               </thead>
               <tbody>
@@ -141,7 +140,6 @@ else {
                 <th>Price</th>
                 <th>Description</th>
                 <th>image</th>
-                <th>QR Code</th>
               </tr>
               </tfoot>
             </table>
