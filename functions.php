@@ -25,6 +25,8 @@ $query=mysqli_query($conn,"select id , emailid from user where emailid='$user2' 
     if($image1 == NULL){
       echo "<tr><td>$count</td><td>{$dishname}</td><td>{$price}</td><td>{$des}</td><td>No Image</td><td> ";
       echo "<a href='qrcode.php?name={$dishname},price={$price}'>click here</a></td></tr>";
+      //echo "<img src='QRcode::png({$dishname})' height='200px'; width='200px';></img>";
+      //echo "<img src='{$image1}' height='200px'; width='200px';></img>";
 
     }
       else {

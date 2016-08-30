@@ -8,8 +8,8 @@ echo $price; echo "</br>";
 $code=$item.$price;
 echo $code;
 //echo "hello";
-$code1=QRcode::png ($code,'test.png','L',200,200);
+$code1=QRcode::png ($code);
 //header('location:qrcode.html');
-echo "<img src='{$code1}' alt='image'></img>";
+echo "<img src='{$code1}' height='200px'; width='200px' alt='image'></img>";
 
  ?>
