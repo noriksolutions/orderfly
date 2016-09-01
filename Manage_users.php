@@ -1,3 +1,12 @@
+<script type="text/javascript">
+function validate(evt){
+     evt.value = evt.value.replace(/[^0-9]/g,"");
+}
+
+</script>
+
+
+
 <?php include "connection.php";
 date_default_timezone_set('Asia/Kolkata');$date2=date('Y-m-d');
 session_start();
@@ -52,91 +61,69 @@ else {
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      User Profile
+      Manage Users
+      <!-- <small>advanced tables</small> -->
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 
-      <li class="active">User profile</li>
+      <li class="active">Manage Users</li>
     </ol>
   </section>
+
+  <!-- Main content -->
   <section class="content">
-
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-xs-12">
 
-        <!-- Profile Image -->
-        <div class="box box-primary">
-          <div class="box-body box-profile">
-            <img class="profile-user-img img-responsive img-circle" src="dist/img/user2-160x160.jpg" alt="User profile picture">
-<?php
-$query2=mysqli_query($conn,"select * from restaurants where emailid='$user2'");
-while($row=mysqli_fetch_array($query2))
-{
-?>
+        <!-- /.box -->
 
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">Users table</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>sno</tsh>
+                  <th>Restaurant id's</th>
+                <th>Restaurant Names</th>
+                <th>Phone</th>
+                <th>Emailid</th>
+                <th>Remove</th>
+                            </tr>
+              </thead>
+              <tbody>
+<?php include "manage.php"; ?>
+          <!-- include the php file here -->
 
-            <h3 class="profile-username text-center"><?php $rest= $row['rest_name']; echo $rest; ?> <a href="#?id=1"><i class="fa fa-fw fa-edit"></i></a></h3>
-
-
-            <p class="text-muted text-center"><?php $phn=$row['phoneno']; echo $phn; ?> <a href="#?id=2"><i class="fa fa-fw fa-edit"></i></a></p>
-
-
-            <ul class="list-group list-group-unbordered">
-              <li class="list-group-item">
-                <b>Emailid</b> <a class="pull-right"><?php $email=$row['emailid']; echo $email;?></a>
-
-              </li>
-              <li class="list-group-item">
-                <b>Phone</b> <a class="pull-right"><?php $phn=$row['phoneno']; echo $phn; ?></a>
-
-              </li>
-              <li class="list-group-item">
-                <b>address</b> <a class="pull-right"><?php $add=$row['address']; echo $add; ?><a href="#?id=5"><i class="fa fa-fw fa-edit"></i></a></a>
-
-              </li>
-            </ul>
-
-
-
-            <!-- <a href="#" class="btn btn-primary btn-block"><b>Edit</b></a> -->
+              </tbody>
+              <tfoot>
+              <tr>
+                <th>sno</tsh>
+                  <th>Restaurant id's</th>
+                <th>Restaurant Names</th>
+                <th>Phone</th>
+                <th>Emailid</th>
+                <th>Remove</th>
+                </tr>
+              </tfoot>
+            </table>
           </div>
           <!-- /.box-body -->
         </div>
+        <!-- /.box -->
       </div>
-
-
-
-      <div class="col-md-3">
-
-        <!-- Profile Image -->
-        <div class="box box-primary">
-          <div class="box-body box-profile">
-            <h1> QRCODE </h1>
-            <?php
-            function printQRCode($url, $size = 200) {
-              return '<img src="http://chart.apis.google.com/chart?chs=' . $size . 'x' . $size . '&cht=qr&chl=' . urlencode($url) . '" />';
-            }
-          //  $data=$row['rest_name'].$row['phone'].$row['address'];
-            //echo "helloworld";
-            $data= $rest."\n".$phn."\n".$email."\n".$add;
-            //echo $data;
-            echo printQRCode($data);
-            ?>
-            <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
-          </div>
-          <!-- /.box-body -->
-        </div>
-      </div>
-<?php } ?>
-
-
-
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
   <!-- /.content -->
 </div>
 
   <!-- /.row -->
-</section>
 
 
 

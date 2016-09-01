@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
   $address=$_POST['address'];
   $phone=$_POST['phone'];
   $rest=$_POST['rest_name'];
-  $query=mysqli_query($conn,"insert into restaurants(rest_name,password,status,emailid,phoneno,address) values ('$rest','$hash',0,'$email','$phone','$address')");
+  $query=mysqli_query($conn,"insert into restaurants(rest_name,password,status,emailid,phoneno,address,dis_status) values ('$rest','$hash',0,'$email','$phone','$address',0)");
   //  var_dump($query);
   if($query)
   {
