@@ -76,10 +76,10 @@ while($row=mysqli_fetch_array($query2))
 ?>
 
 
-            <h3 class="profile-username text-center"><?php $rest= $row['rest_name']; echo $rest; ?> <a href="#?id=1"><i class="fa fa-fw fa-edit"></i></a></h3>
+            <h3 class="profile-username text-center"><?php $rest= $row['rest_name']; echo $rest; ?> <a href="edit1.php?id=1"><i class="fa fa-fw fa-edit"></i></a></h3>
 
 
-            <p class="text-muted text-center"><?php $phn=$row['phoneno']; echo $phn; ?> <a href="#?id=2"><i class="fa fa-fw fa-edit"></i></a></p>
+            <p class="text-muted text-center"><?php $phn=$row['phoneno']; echo $phn; ?> <a href="edit1.php?id=2"><i class="fa fa-fw fa-edit"></i></a></p>
 
 
             <ul class="list-group list-group-unbordered">
@@ -92,7 +92,7 @@ while($row=mysqli_fetch_array($query2))
 
               </li>
               <li class="list-group-item">
-                <b>address</b> <a class="pull-right"><?php $add=$row['address']; echo $add; ?><a href="#?id=5"><i class="fa fa-fw fa-edit"></i></a></a>
+                <b>address</b> <a class="pull-right"><?php $add=$row['address']; echo $add; ?><a href="edit1.php?id=5"><i class="fa fa-fw fa-edit"></i></a></a>
 
               </li>
             </ul>
